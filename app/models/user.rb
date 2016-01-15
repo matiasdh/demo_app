@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
 
   enum gender: %w(male female)
 
+  has_many :posts
+
   def karma
-    0
+    posts.count / 10
   end
 end
