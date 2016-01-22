@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
   has_many :posts
 
   def karma
-    posts.count / 10
+    (posts.count / 10) - Date.today.year - birthdate.year
   end
 end
